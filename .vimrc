@@ -117,6 +117,7 @@ nnoremap <C-Up> :t .-2<CR>==
 
 "plugins
 nnoremap ²  :NERDTreeToggle<CR> <bar> :NERDTreeMirror<CR>
+nnoremap =  :NERDTreeFind<CR>
 nnoremap <C-S> :w<CR>
 nnoremap <C-F7> :Tabularize /=<CR>
 nnoremap <C-A>  :FufTaggedFile<CR>
