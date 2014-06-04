@@ -106,8 +106,8 @@ nnoremap tt  :tabedit<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
 nnoremap tn :tabnew<CR>
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-Left> :bp<CR>
+nnoremap <C-Right> :bn<CR>
 
 "lines
 nnoremap <A-Up> :m .-2<CR>==
