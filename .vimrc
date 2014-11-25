@@ -20,7 +20,7 @@ set autoread
 " Alternative syntax highlighting colours for a dark background
 syntax on
 colorscheme elflord
-"set background=dark
+"set background=light
 
 set number
 
@@ -106,8 +106,10 @@ nnoremap tt  :tabedit<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
 nnoremap tn :tabnew<CR>
-nnoremap <C-Left> :bp<CR>
-nnoremap <C-Right> :bn<CR>
+nnoremap <A-Left> :bp<CR>
+nnoremap <A-Right> :bn<CR>
+nnoremap <C-Left> :tabp<CR>
+nnoremap <C-Right> :tabn<CR>
 
 "lines
 nnoremap <A-Up> :m .-2<CR>==
@@ -116,7 +118,11 @@ nnoremap <C-Down> :t .<CR>==
 nnoremap <C-Up> :t .-2<CR>==
 
 "plugins
+"let NERDTreeMapOpenInTab='<ENTER>'
 nnoremap ²  :NERDTreeToggle<CR> <bar> :NERDTreeMirror<CR>
+nnoremap =  :NERDTreeFind<CR>
+"nnoremap ²  :NERDTreeTabsToggle<CR> <bar> :NERDTreeMirrorOpen<CR>
+"nnoremap ²  :NERDTreeMirrorOpen<CR>
 nnoremap =  :NERDTreeFind<CR>
 nnoremap <C-S> :w<CR>
 nnoremap <C-F7> :Tabularize /=<CR>
@@ -124,7 +130,7 @@ nnoremap <C-A>  :FufTaggedFile<CR>
 
 "php"
 autocmd FileType php nnoremap <C-F5> <C-O>:InsertBothGetterSetter /=<CR>
-autocmd FileType php noremap <C-L> :!pu %<CR>
+autocmd FileType php noremap <C-L> :!clear; phpunit --debug %<CR>
 autocmd FileType php nnoremap ++  :DisablePHPFolds<CR>
 autocmd FileType php nnoremap --  :EnableFastPHPFolds<CR>
 autocmd FileType * noremap <C-K> :call ClearFile()<CR>
@@ -176,3 +182,9 @@ autocmd FileType php nnoremap 8+  :call AddPuGroup()<CR>
 
 "Config plugins
 let DisableAutoPHPFolding = 1
+
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_root_markers = ['.git']
+set wildignore+=*/tmp/*,*/cache/*,*.so,*.swp,*.zip,*/web/coverage/*
